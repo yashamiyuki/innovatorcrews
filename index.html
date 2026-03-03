@@ -13,7 +13,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="icon" type="image/png" href="img/ic%20logo.png" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -22,7 +21,7 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="#home" class="nav-logo" aria-label="Innovator Crews — Home">
-        <img src="img/ic%20logo.png" alt="Innovator Crews" class="logo-img">
+        <img src="ic%20logo.png" alt="Innovator Crews" class="logo-img">
         <span class="logo-fallback">Innovator Crews</span>
       </a>
       <ul class="nav-links" id="navLinks">
@@ -55,6 +54,10 @@
     </div>
     <div class="hero-inner container">
       <div class="hero-text" data-aos="fade-up">
+        <div class="hero-tag">
+          <span class="tag-dot"></span>
+          <span>Available for New Projects &mdash; 2026</span>
+        </div>
         <h1 class="hero-headline">
           Your Business<br />
           Deserves a Website<br />
@@ -140,22 +143,22 @@
     <div class="container">
       <div class="proof-grid">
         <div class="proof-item">
-          <span class="proof-num" data-count="40" data-suffix="+">0+</span>
+          <span class="proof-num" data-count="40">0</span><span class="proof-suf">+</span>
           <span class="proof-label">Projects Delivered</span>
         </div>
         <div class="proof-sep"></div>
         <div class="proof-item">
-          <span class="proof-num" data-count="30" data-suffix="+">0+</span>
+          <span class="proof-num" data-count="30">0</span><span class="proof-suf">+</span>
           <span class="proof-label">Years Combined Experience</span>
         </div>
         <div class="proof-sep"></div>
         <div class="proof-item">
-          <span class="proof-num" data-count="100" data-suffix="%">0%</span>
+          <span class="proof-num" data-count="100">0</span><span class="proof-suf">%</span>
           <span class="proof-label">Client Satisfaction Rate</span>
         </div>
         <div class="proof-sep"></div>
         <div class="proof-item">
-          <span class="proof-num" data-count="24" data-suffix="h">0h</span>
+          <span class="proof-num" data-count="24">0</span><span class="proof-suf">h</span>
           <span class="proof-label">Response Guarantee</span>
         </div>
       </div>
@@ -198,15 +201,27 @@
         </div>
 
         <div class="svc-card">
-          <div class="svc-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+          <div class="svc-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+          <h3>Web &amp; Mobile Apps</h3>
+          <p>Have a business idea that needs a custom app? We build web and mobile applications that solve real problems and scale with your growth.</p>
+          <ul class="svc-list">
+            <li><i class="fa-solid fa-check"></i> iOS &amp; Android ready</li>
+            <li><i class="fa-solid fa-check"></i> User-friendly interfaces</li>
+            <li><i class="fa-solid fa-check"></i> Secure &amp; scalable</li>
+          </ul>
+          <a href="#contact" class="svc-link">Build your app <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="svc-card svc-accent-card">
+          <div class="svc-icon-white"><i class="fa-solid fa-pen-ruler"></i></div>
           <h3>Brand &amp; UI/UX Design</h3>
           <p>We craft visual identities and user experiences that make your brand look premium, trustworthy, and impossible to ignore.</p>
-          <ul class="svc-list">
+          <ul class="svc-list-white">
             <li><i class="fa-solid fa-check"></i> Logo &amp; brand identity</li>
             <li><i class="fa-solid fa-check"></i> UI design &amp; prototyping</li>
             <li><i class="fa-solid fa-check"></i> User research &amp; testing</li>
           </ul>
-          <a href="#contact" class="svc-link">Design my brand <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="svc-link-white">Design my brand <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="svc-card">
@@ -287,6 +302,7 @@
         <button class="pf-btn active" data-filter="all">All</button>
         <button class="pf-btn" data-filter="website">Websites</button>
         <button class="pf-btn" data-filter="ecomm">E-Commerce</button>
+        <button class="pf-btn" data-filter="app">Web Apps</button>
         <button class="pf-btn" data-filter="brand">Branding</button>
       </div>
       <div class="portfolio-grid" data-aos="fade-up">
@@ -327,6 +343,24 @@
           </div>
         </div>
 
+        <div class="port-card" data-category="app">
+          <div class="port-image">
+            <div class="port-bg" style="background:linear-gradient(135deg,#0369A1 0%,#38BDF8 100%)">
+              <div class="port-mockup-mini">
+                <div class="pmm-bar"></div>
+                <div class="pmm-dash"><div class="pmm-stat"></div><div class="pmm-stat"></div><div class="pmm-stat"></div></div>
+                <div class="pmm-chart"></div>
+              </div>
+            </div>
+            <div class="port-overlay"><a href="#contact" class="port-cta">View Details <i class="fa-solid fa-arrow-right"></i></a></div>
+          </div>
+          <div class="port-info">
+            <div class="port-meta"><span class="port-tag">Web App</span><span class="port-result"><i class="fa-solid fa-users"></i> 5,000+ Users</span></div>
+            <h3>FitTrack Wellness App</h3>
+            <p>Cross-platform fitness management app with 5,000 active users and a 4.8-star store rating.</p>
+          </div>
+        </div>
+
         <div class="port-card" data-category="brand">
           <div class="port-image">
             <div class="port-bg" style="background:linear-gradient(135deg,#6D28D9 0%,#C084FC 100%)">
@@ -342,6 +376,23 @@
             <div class="port-meta"><span class="port-tag">Brand Identity</span><span class="port-result"><i class="fa-solid fa-star"></i> Premium Rebrand</span></div>
             <h3>Luminary Brand Refresh</h3>
             <p>Complete brand identity + website redesign that repositioned a startup as a premium market player.</p>
+          </div>
+        </div>
+
+        <div class="port-card" data-category="app">
+          <div class="port-image">
+            <div class="port-bg" style="background:linear-gradient(135deg,#065F46 0%,#34D399 100%)">
+              <div class="port-mockup-mini">
+                <div class="pmm-bar"></div>
+                <div class="pmm-table"><div class="pmm-tr"></div><div class="pmm-tr"></div><div class="pmm-tr"></div></div>
+              </div>
+            </div>
+            <div class="port-overlay"><a href="#contact" class="port-cta">View Details <i class="fa-solid fa-arrow-right"></i></a></div>
+          </div>
+          <div class="port-info">
+            <div class="port-meta"><span class="port-tag">Web App</span><span class="port-result"><i class="fa-solid fa-clock"></i> Saves 12h/week</span></div>
+            <h3>EduPortal LMS Platform</h3>
+            <p>Learning management system that cut admin workload by 12 hours per week for a training company.</p>
           </div>
         </div>
 
@@ -690,7 +741,6 @@
   <section class="cta-section">
     <div class="container">
       <div class="cta-inner" data-aos="fade-up">
-        <div class="cta-parallax-bg" aria-hidden="true"></div>
         <div class="cta-bg-orbs">
           <div class="cta-orb cta-orb-1"></div>
           <div class="cta-orb cta-orb-2"></div>
@@ -725,23 +775,29 @@
             </div>
             <div class="cd-item">
               <div class="cd-icon"><i class="fa-solid fa-location-dot"></i></div>
-              <div><strong>Location</strong><span>Philippines &mdash; Serving Worldwide</span></div>
+              <div><strong>Location</strong><span>Philippines &#127477;&#127469; &mdash; Serving Worldwide</span></div>
             </div>
             <div class="cd-item">
-              <div class="cd-icon"><i class="fa-solid fa-user-check"></i></div>
+              <div class="cd-icon"><i class="fa-solid fa-circle-check" style="color:#22C55E"></i></div>
               <div><strong>Availability</strong><span>Currently accepting new clients</span></div>
             </div>
+          </div>
+          <div class="contact-socials">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
           </div>
         </div>
         <div class="contact-right" data-aos="fade-left">
           <form class="contact-form" id="contactForm" novalidate>
             <div class="cf-row">
               <div class="cf-group">
-                <label for="cfName">Full Name <span class="req">*</span></label>
+                <label for="cfName">Full Name *</label>
                 <input type="text" id="cfName" name="name" placeholder="Maria Santos" required />
               </div>
               <div class="cf-group">
-                <label for="cfEmail">Email Address <span class="req">*</span></label>
+                <label for="cfEmail">Email Address *</label>
                 <input type="email" id="cfEmail" name="email" placeholder="maria@business.com" required />
               </div>
             </div>
@@ -750,7 +806,7 @@
               <input type="text" id="cfBusiness" name="business" placeholder="e.g. Maria's Bakery" />
             </div>
             <div class="cf-group">
-              <label for="cfNeed">What Do You Need? <span class="req">*</span></label>
+              <label for="cfNeed">What Do You Need? *</label>
               <select id="cfNeed" name="need" required>
                 <option value="">Select a service...</option>
                 <option>New Business Website</option>
@@ -775,7 +831,7 @@
               </select>
             </div>
             <div class="cf-group">
-              <label for="cfMsg">Tell Us About Your Project <span class="req">*</span></label>
+              <label for="cfMsg">Tell Us About Your Project *</label>
               <textarea id="cfMsg" name="message" rows="4" placeholder="What are you building? Who are your customers? Any important details or deadlines?" required></textarea>
             </div>
             <button type="submit" class="btn-primary btn-full">
@@ -799,10 +855,16 @@
         <div class="footer-grid">
           <div class="footer-brand">
             <div class="footer-logo">
-              <img src="img/ic%20logo.png" alt="Innovator Crews" class="logo-img logo-img--white">
+              <img src="ic%20logo.png" alt="Innovator Crews" class="logo-img logo-img--white">
               <span class="logo-fallback">Innovator Crews</span>
             </div>
             <p>We design and build websites and apps that help businesses grow online &mdash; from first impression to lasting results.</p>
+            <div class="f-socials">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
           </div>
           <div class="footer-col">
             <h4>Services</h4>
