@@ -111,15 +111,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const animateCounter = el => {
       const target   = parseInt(el.dataset.count, 10);
+      const suffix   = el.dataset.suffix || '';
       const duration = 1600;
       let start      = null;
 
       const step = timestamp => {
         if (!start) start = timestamp;
         const progress = Math.min((timestamp - start) / duration, 1);
-        el.textContent = Math.floor(easeOutQuad(progress) * target);
+        el.textContent = `${Math.floor(easeOutQuad(progress) * target)}${suffix}`;
         if (progress < 1) requestAnimationFrame(step);
-        else el.textContent = target;
+        else el.textContent = `${target}${suffix}`;
       };
       requestAnimationFrame(step);
     };
@@ -330,13 +331,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ──────────────────────────────────────
-     13. MARQUEE (if any horizontal strip)
+     13. CTA PARALLAX BACKGROUND
+  ────────────────────────────────────── */
+  const CtaParallax = (() => {
+    const bg = document.querySelector('.cta-parallax-bg');
+    if (!bg || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const section = bg.closest('.cta-section');
+          if (!section) return;
+          const rect = section.getBoundingClientRect();
+          const offset = Math.max(Math.min(rect.top * -0.12, 36), -36);
+          bg.style.transform = `scale(1.08) translateY(${offset}px)`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+
+    /* ──────────────────────────────────────
+      14. MARQUEE (if any horizontal strip)
   ────────────────────────────────────── */
   // No marquee strip in this version — placeholder for future use
 
 
-  /* ──────────────────────────────────────
-     14. ACCESSIBILITY — skip link
+    /* ──────────────────────────────────────
+      15. ACCESSIBILITY — skip link
   ────────────────────────────────────── */
   const A11y = (() => {
     const skip = document.createElement('a');
