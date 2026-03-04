@@ -1049,7 +1049,8 @@ input, textarea, select { font: inherit; }
 .process-grid {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 10px;
+  overflow: visible;
 }
 .proc-step {
   flex: 1;
@@ -1061,6 +1062,7 @@ input, textarea, select { font: inherit; }
   flex-direction: column;
   gap: 12px;
   position: relative;
+  z-index: 1;
   transition: transform var(--t-base), box-shadow var(--t-base);
 }
 .proc-step:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
@@ -1104,26 +1106,71 @@ input, textarea, select { font: inherit; }
   width: fit-content;
 }
 .proc-line {
-  width: 40px;
-  height: 2px;
-  background: var(--blue-200);
+  width: 56px;
+  height: 34px;
   flex-shrink: 0;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.proc-line::before {
+  content: '';
+  width: 38px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue-200), var(--blue-300));
+  border-radius: var(--r-full);
 }
 .proc-line::after {
   content: '';
   position: absolute;
-  right: -5px;
-  top: -4px;
+  right: 7px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 0;
   height: 0;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 7px solid var(--blue-300);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 9px solid var(--blue-400);
 }
 
 /* ─── TESTIMONIALS ─── */
-.testimonials { background: var(--gray-900); }
+.testimonials {
+  background:
+    radial-gradient(circle at 16% 20%, rgba(59,130,246,.20), transparent 46%),
+    radial-gradient(circle at 84% 78%, rgba(99,102,241,.18), transparent 50%),
+    linear-gradient(160deg, var(--gray-900) 0%, var(--gray-800) 58%, var(--gray-900) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.testimonials::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,.10) .8px, transparent .8px);
+  background-size: 26px 26px;
+  opacity: .18;
+  pointer-events: none;
+}
+.testimonials::after {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(90px);
+  background: rgba(59,130,246,.22);
+  top: -120px;
+  right: -120px;
+  pointer-events: none;
+}
+.testimonials .container,
+.testimonials .section-header,
+.testimonials .testi-grid {
+  position: relative;
+  z-index: 1;
+}
 .testimonials .eyebrow { color: var(--blue-400); }
 .testimonials .section-title { color: #fff; }
 .testimonials .gt {
@@ -1136,21 +1183,52 @@ input, textarea, select { font: inherit; }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  perspective: 1000px;
 }
 .testi-card {
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.1);
+  background: linear-gradient(145deg, rgba(255,255,255,.11) 0%, rgba(255,255,255,.05) 100%);
+  border: 1px solid rgba(255,255,255,.18);
   border-radius: var(--r-xl);
   padding: 32px;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transition: background var(--t-base), border-color var(--t-base);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 12px 36px rgba(2,6,23,.25);
+  transition: transform var(--t-base), background var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
+}
+.testi-card::before {
+  content: '\\f10d';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,.22);
+}
+.testi-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -140%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.26) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-18deg);
+  transition: left 760ms var(--ease);
+  pointer-events: none;
 }
 .testi-card:hover {
-  background: rgba(255,255,255,.08);
-  border-color: rgba(255,255,255,.2);
+  background: linear-gradient(145deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.07) 100%);
+  border-color: rgba(255,255,255,.34);
+  box-shadow: 0 18px 48px rgba(2,6,23,.35);
+  transform: translateY(-7px);
 }
+.testi-card:hover::after { left: 150%; }
 .testi-big { grid-row: span 2; }
 .testi-stars {
   color: #FBBF24;
@@ -1158,21 +1236,26 @@ input, textarea, select { font: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 2px;
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: var(--r-full);
+  background: rgba(251,191,36,.14);
+  border: 1px solid rgba(251,191,36,.25);
 }
 .testi-card blockquote {
-  font-size: .95rem;
-  color: rgba(255,255,255,.8);
+  font-size: .98rem;
+  color: rgba(255,255,255,.88);
   line-height: 1.7;
   font-style: italic;
   flex: 1;
 }
-.testi-big blockquote { font-size: 1.1rem; }
+.testi-big blockquote { font-size: 1.12rem; }
 .testi-author {
   display: flex;
   align-items: center;
   gap: 12px;
   padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,.08);
+  border-top: 1px solid rgba(255,255,255,.16);
 }
 .testi-av {
   width: 44px; height: 44px;
@@ -1184,9 +1267,10 @@ input, textarea, select { font: inherit; }
   font-size: .8rem;
   color: #fff;
   flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(2,6,23,.35);
 }
-.testi-author strong { display: block; color: #fff; font-size: .9rem; }
-.testi-author span { font-size: .78rem; color: var(--gray-400); }
+.testi-author strong { display: block; color: #fff; font-size: .92rem; }
+.testi-author span { font-size: .79rem; color: var(--gray-300); }
 
 /* ─── PRICING ─── */
 .pricing-grid {
