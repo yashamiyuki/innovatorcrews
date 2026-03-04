@@ -1562,14 +1562,16 @@ input, textarea, select { font: inherit; }
 .testi-av {
   width: 44px; height: 44px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: .8rem;
-  color: #fff;
   flex-shrink: 0;
+  overflow: hidden;
   box-shadow: 0 8px 24px rgba(2,6,23,.35);
+  border: 2px solid rgba(255,255,255,.18);
+}
+.testi-av img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 .testi-author strong { display: block; color: #fff; font-size: .92rem; }
 .testi-author span { font-size: .79rem; color: var(--gray-300); }
