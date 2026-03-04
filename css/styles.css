@@ -1432,17 +1432,28 @@ input, textarea, select { font: inherit; }
 
 /* ─── CTA SECTION ─── */
 .cta-section {
-  background: var(--grad-brand);
+  background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1800&q=80');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: var(--space-section) 0;
   position: relative;
   overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15,23,42,.78) 0%, rgba(30,58,138,.62) 100%);
+  z-index: 0;
 }
 .cta-inner {
   text-align: center;
   position: relative;
   z-index: 1;
 }
-.cta-bg-orbs { position: absolute; inset: 0; pointer-events: none; }
+.cta-bg-orbs { display: none; }
 .cta-orb {
   position: absolute;
   border-radius: 50%;
@@ -1976,6 +1987,7 @@ p, li,
   .process-grid   { flex-wrap: wrap; gap: 20px; }
   .proc-line      { display: none; }
   .proc-step      { flex: 1 1 calc(50% - 10px); min-width: 200px; }
+  .cta-section    { background-attachment: scroll; }
 }
 
 /* ── 900px ── */
