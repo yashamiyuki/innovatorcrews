@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
     // Apply data-aos-delay attribute if present; otherwise auto-stagger siblings
     els.forEach(el => {
@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const TiltCards = (() => {
     if (window.matchMedia('(pointer: coarse)').matches) return;
 
-    const cards = document.querySelectorAll('.svc-card, .price-card, .tm-card, .why-card');
+    const cards = document.querySelectorAll('.svc-card, .tm-card, .why-card');
 
     cards.forEach(card => {
       card.addEventListener('mousemove', e => {

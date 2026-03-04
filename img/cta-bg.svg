@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="CTA background">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="55%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <radialGradient id="r1" cx="20%" cy="25%" r="35%">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#60A5FA" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="r2" cx="82%" cy="72%" r="34%">
+      <stop offset="0%" stop-color="#818CF8" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#818CF8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#g1)"/>
+  <rect width="1920" height="1080" fill="url(#r1)"/>
+  <rect width="1920" height="1080" fill="url(#r2)"/>
+  <g opacity="0.16" stroke="#DBEAFE" stroke-width="1">
+    <path d="M0 180 H1920"/><path d="M0 360 H1920"/><path d="M0 540 H1920"/><path d="M0 720 H1920"/><path d="M0 900 H1920"/>
+    <path d="M180 0 V1080"/><path d="M360 0 V1080"/><path d="M540 0 V1080"/><path d="M720 0 V1080"/><path d="M900 0 V1080"/><path d="M1080 0 V1080"/><path d="M1260 0 V1080"/><path d="M1440 0 V1080"/><path d="M1620 0 V1080"/><path d="M1800 0 V1080"/>
+  </g>
+</svg>
