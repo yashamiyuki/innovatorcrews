@@ -324,6 +324,30 @@ input, textarea, select { font: inherit; }
 .nav-cta:hover { transform: translateY(-1px); filter: brightness(1.08); }
 .nav-cta i   { font-size: .75rem; transition: transform var(--t-base); }
 .nav-cta:hover i { transform: translateX(3px); }
+
+/* Mobile-only CTA inside nav menu */
+.nav-mobile-cta-item { display: none; }
+.nav-mobile-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--grad-brand);
+  color: #fff;
+  font-size: .95rem;
+  font-weight: 600;
+  padding: 13px 20px;
+  border-radius: var(--r-full);
+  box-shadow: var(--shadow-blue);
+  letter-spacing: .02em;
+  transition: transform var(--t-base), filter var(--t-base);
+  width: 100%;
+  justify-content: center;
+  margin-top: 6px;
+}
+.nav-mobile-cta i { font-size: .75rem; transition: transform var(--t-base); }
+.nav-mobile-cta:hover { transform: translateY(-1px); filter: brightness(1.08); }
+.nav-mobile-cta:hover i { transform: translateX(3px); }
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -1633,17 +1657,25 @@ input, textarea, select { font: inherit; }
 .footer-cta-btn {
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   background: var(--grad-brand);
   color: #fff;
-  font-size: .85rem;
-  font-weight: 700;
-  padding: 11px 22px;
+  font-size: .875rem;
+  font-weight: 600;
+  padding: 12px 24px;
   border-radius: var(--r-full);
   margin-bottom: 16px;
   box-shadow: var(--shadow-blue);
-  transition: filter var(--t-base), transform var(--t-base);
+  letter-spacing: .02em;
+  transition: transform var(--t-base), box-shadow var(--t-base), filter var(--t-base);
 }
-.footer-cta-btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+.footer-cta-btn i { font-size: .75rem; transition: transform var(--t-base); }
+.footer-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(37,99,235,.35);
+  filter: brightness(1.08);
+}
+.footer-cta-btn:hover i { transform: translateX(3px); }
 .footer-available {
   display: flex;
   align-items: center;
@@ -2060,8 +2092,8 @@ p, li,
     font-size: .95rem;
   }
   .hamburger  { display: flex; }
-  .nav-cta span { display: none; }
-  .nav-cta    { padding: 10px 14px; }
+  .nav-cta     { display: none; }
+  .nav-mobile-cta-item { display: block; }
   .proof-grid { flex-direction: column; gap: 0; }
   .proof-sep  { width: 48px; height: 1px; align-self: center; }
   .proof-item { padding: 22px 0; width: 100%; }
