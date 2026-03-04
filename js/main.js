@@ -154,19 +154,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         cards.forEach(card => {
           const match = filter === 'all' || card.dataset.category === filter;
-          card.style.transition = 'opacity 0.3s, transform 0.3s';
           if (match) {
+            card.style.display   = '';
             card.style.opacity   = '1';
             card.style.transform = 'scale(1)';
-            card.style.display   = '';
           } else {
+            card.style.display   = 'none';
             card.style.opacity   = '0';
             card.style.transform = 'scale(0.96)';
-            setTimeout(() => {
-              if (card.dataset.category !== filter && btn.dataset.filter !== 'all') {
-                // keep in DOM but visually hidden is fine for simple layout
-              }
-            }, 300);
           }
         });
       });
