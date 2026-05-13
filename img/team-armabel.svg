@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EFF6FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DBEAFE;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="circleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bgGrad)" />
+
+  <!-- Subtle grid pattern -->
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#BFDBFE" stroke-width="0.5"/>
+  </pattern>
+  <rect width="400" height="400" fill="url(#grid)" opacity="0.5"/>
+
+  <!-- Avatar circle background -->
+  <circle cx="200" cy="155" r="80" fill="url(#circleGrad)" opacity="0.15"/>
+  <circle cx="200" cy="155" r="68" fill="url(#circleGrad)" opacity="0.2"/>
+
+  <!-- Person silhouette head -->
+  <circle cx="200" cy="135" r="38" fill="#93C5FD"/>
+
+  <!-- Person silhouette body -->
+  <ellipse cx="200" cy="215" rx="55" ry="42" fill="#93C5FD"/>
+
+  <!-- Initials overlay -->
+  <text x="200" y="148" text-anchor="middle" dominant-baseline="middle"
+        font-family="Inter, sans-serif" font-size="36" font-weight="700"
+        fill="#1D4ED8" letter-spacing="2">AR</text>
+
+  <!-- Divider line -->
+  <line x1="60" y1="272" x2="340" y2="272" stroke="#BFDBFE" stroke-width="1.5"/>
+
+  <!-- Coming Soon text -->
+  <text x="200" y="305" text-anchor="middle"
+        font-family="Inter, sans-serif" font-size="15" font-weight="600"
+        fill="#2563EB" letter-spacing="3">PHOTO COMING SOON</text>
+
+  <!-- Name -->
+  <text x="200" y="338" text-anchor="middle"
+        font-family="Inter, sans-serif" font-size="13" font-weight="400"
+        fill="#60A5FA">Armabel Ramos</text>
+
+  <!-- Corner accent dots -->
+  <circle cx="24" cy="24" r="4" fill="#3B82F6" opacity="0.3"/>
+  <circle cx="376" cy="24" r="4" fill="#3B82F6" opacity="0.3"/>
+  <circle cx="24" cy="376" r="4" fill="#3B82F6" opacity="0.3"/>
+  <circle cx="376" cy="376" r="4" fill="#3B82F6" opacity="0.3"/>
+</svg>
